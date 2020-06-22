@@ -22,8 +22,6 @@ app.on('ready', () => {
         mainWindow.maximize() // for full screen
 
 
-        // imageScreen = 'file:///E:/dev/@TODO/desktop/screens/top-on.html'
-
         // const currentURL = mainWindow.webContents.getURL()
         mainWindow.setIgnoreMouseEvents(true)
         mainWindow.setAlwaysOnTop(true, 'screen')
