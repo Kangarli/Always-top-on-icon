@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/image.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div id="container">
+        <ul>
+            <li><input type="number" id="width" placeholder="width"></li>
+            <li><input type="number" id="height" placeholder="height"></li>
+            <li><input type="number" id="positionX" placeholder="position X"></li>
+            <li><input type="number" id="positionY" placeholder="position Y"></li>
+            <li><input type="number" id="opacity" placeholder="opacity"></li>
+            <li id="btn" onclick="openImage()">Submit</li>
+        </ul>
+    </div>
+
+    <div id="img">
+        <img id="image" class="image" src="./images/1.png">
+    </div>
+
+    <script>
+        var image = document.getElementById('image')
+        var img = document.getElementById('img')
+        var container = document.getElementById('container')
+        var btn = document.getElementById('btn')
+
+        var width = document.getElementById('width')
+        var height = document.getElementById('height')
+        var opacity = document.getElementById('opacity')
+        var positionX = document.getElementById('positionX')
+        var positionY = document.getElementById('positionY')
+
+
+        function openImage() {
+            container.style.display = 'none'
+            img.style.display = 'flex'
+
+            image.style.width = width.value + 'px'
+            image.style.height = height.value + 'px'
+            image.style.opacity = opacity.value
+
+            image.style.marginLeft = positionX.value + 'px'
+            image.style.marginTop = positionY.value + 'px'
+        }
+
+
+        document.addEventListener("keydown", function (event) {
+            if (event.keyCode === 13) {
+                openImage()
+            }
+        });
+    </script>
+</body>
+
+</html>
